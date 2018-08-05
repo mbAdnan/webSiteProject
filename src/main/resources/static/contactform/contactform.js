@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
     $.ajax({
       type: "POST",
       contentType : 'application/json; charset=utf-8',
-      url: window.location.hostname+"/send",
+      url: "/send",
       data: JSON.stringify(formData),
       success: function(msg) {
         // alert(msg);
