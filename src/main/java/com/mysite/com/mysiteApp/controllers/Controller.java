@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class Controller {
@@ -28,5 +29,9 @@ public class Controller {
         message.setDate(new Date());
         System.out.println("hello post is working congrat date is : "+messageRepository.save(message).getDate());
         return "OK";
+    }
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public List<Message> getAll(){
+        return messageRepository.findAll();
     }
 }
