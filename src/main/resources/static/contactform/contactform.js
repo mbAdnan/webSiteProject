@@ -96,11 +96,11 @@ jQuery(document).ready(function($) {
         		sujet : $("#subject").val(),
         		message :  $("#myMessage").val()
         	}
-    alert(JSON.stringify(formData));
+
     $.ajax({
       type: "POST",
       contentType : 'application/json; charset=utf-8',
-      url: "http://localhost:8080/send",
+      url: window.location.hostname+"/send",
       data: JSON.stringify(formData),
       success: function(msg) {
         // alert(msg);
